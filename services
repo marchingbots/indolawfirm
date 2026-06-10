@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Legal Services | Yafet Rissy & Partners Law Firm</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #5f5f5f;
+      --line: #dedede;
+      --soft: #f6f6f6;
+      --dark: #000000;
+      --max: 1160px;
+      --pad: 16px;
+    }
+
+    @media (min-width: 300px) { :root { --pad: 18px; } }
+    @media (min-width: 400px) { :root { --pad: 22px; } }
+    @media (min-width: 576px) { :root { --pad: 28px; } }
+    @media (min-width: 768px) { :root { --pad: 36px; } }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      letter-spacing: -0.005em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .page {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      padding-inline: var(--pad);
+      margin-inline: auto;
+    }
+
+    .site-header,
+    .site-footer {
+      background: #000;
+      color: #fff;
+    }
+
+    .site-header {
+      padding-block: 18px;
+    }
+
+    .nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      z-index: 2;
+    }
+
+    .menu-toggle {
+      width: 38px;
+      height: 28px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 7px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+      transition: transform 180ms ease;
+    }
+
+    .menu-toggle.is-active span:first-child {
+      transform: translateY(4.5px) rotate(45deg);
+    }
+
+    .menu-toggle.is-active span:last-child {
+      transform: translateY(-4.5px) rotate(-45deg);
+    }
+
+    .nav-links {
+      display: none;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-links.is-open {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 22px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 0.95rem;
+      z-index: 10;
+    }
+
+    main {
+      flex: 1 1 auto;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-block {
+      padding: clamp(4rem, 8vw, 6rem) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading-lg {
+      margin: 0;
+      max-width: 52rem;
+      font-size: clamp(2.2rem, 5vw, 4.25rem);
+      line-height: 0.98;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      color: var(--text);
+    }
+
+    .section-intro {
+      max-width: 52rem;
+      margin: 1.75rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.25vw, 1.12rem);
+      line-height: 1.8;
+    }
+
+    .law-hero {
+      padding: clamp(5rem, 9vw, 7rem) 0 clamp(4rem, 8vw, 6rem);
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .law-hero-title {
+      max-width: 12ch;
+      margin: 0 0 1.5rem;
+      font-size: clamp(3rem, 7vw, 6.25rem);
+      line-height: 0.96;
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      color: #111;
+    }
+
+    .law-hero-subtitle {
+      max-width: 48rem;
+      margin: 0 0 2rem;
+      color: #222;
+      font-size: clamp(1.25rem, 2vw, 1.8rem);
+      line-height: 1.35;
+      font-weight: 400;
+      letter-spacing: -0.025em;
+    }
+
+    .law-hero-copy {
+      max-width: 48rem;
+      margin: 0 0 1.25rem;
+      color: #222;
+      font-size: clamp(1rem, 1.15vw, 1.1rem);
+      line-height: 1.8;
+    }
+
+    .law-hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.35rem;
+      border-radius: 999px;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .btn:hover {
+      background: #000;
+    }
+
+    .serve-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .serve-card-inner {
+      height: 100%;
+      min-height: 190px;
+      padding: 2rem;
+      background: #000;
+      color: #fff;
+      border-radius: 1.5rem;
+    }
+
+    .serve-card h3 {
+      margin: 0 0 0.85rem;
+      color: #fff;
+      font-size: clamp(1.3rem, 2vw, 1.55rem);
+      line-height: 1.15;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+    }
+
+    .serve-card p {
+      margin: 0;
+      color: rgba(255,255,255,0.82);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .trust-layout,
+    .contact-layout {
+      display: grid;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .trust-copy {
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .trust-copy p {
+      max-width: 46rem;
+      margin: 0 0 1.25rem;
+      color: #222;
+      font-size: clamp(1rem, 1.15vw, 1.08rem);
+      line-height: 1.85;
+    }
+
+    .trust-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .law-focus-list {
+      margin-top: 3rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .law-focus-item {
+      display: grid;
+      gap: 0.75rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .law-focus-item h3 {
+      margin: 0;
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+      line-height: 1.2;
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      color: #111;
+    }
+
+    .law-focus-item p {
+      max-width: 42rem;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .contact-block {
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-block h3 {
+      margin: 0 0 1.5rem;
+      font-size: 1.35rem;
+      line-height: 1.1;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #111;
+    }
+
+    .contact-block p {
+      margin: 0;
+      color: #222;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .contact-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-list li {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1.25rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--line);
+      color: #111;
+    }
+
+    .contact-list li:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .contact-list strong {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .contact-list span {
+      color: #222;
+      line-height: 1.75;
+    }
+
+    .contact-list a:hover {
+      text-decoration: underline;
+    }
+
+    .cta-strip {
+      padding: clamp(4rem, 8vw, 6rem) 0;
+      background: #fff;
+    }
+
+    .cta-minimal {
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .cta-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .cta-copy {
+      margin: 0 0 1.25rem;
+      color: #222;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .site-footer {
+      margin-top: auto;
+      padding-block: 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    @media (min-width: 576px) {
+      .brand {
+        font-size: 24px;
+      }
+
+      .serve-card-inner {
+        min-height: 220px;
+      }
+
+      .footer-links {
+        flex-direction: row;
+        gap: 22px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .brand {
+        font-size: 26px;
+      }
+
+      .serve-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .law-focus-item {
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 3rem;
+        align-items: start;
+      }
+
+      .cta-grid {
+        grid-template-columns: 1.35fr 0.65fr;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .site-header {
+        padding-block: 26px;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 22px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .container {
+        max-width: var(--max);
+      }
+
+      .brand {
+        font-size: 28px;
+      }
+
+      .serve-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .trust-layout,
+      .contact-layout {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      :root {
+        --max: 1120px;
+      }
+
+      .site-header {
+        padding-block: 30px;
+      }
+
+      .brand {
+        font-size: 30px;
+      }
+    }
+
+    @media (min-width: 1400px) {
+      :root {
+        --max: 1240px;
+      }
+
+      .brand {
+        font-size: 32px;
+      }
+
+      .nav-links,
+      .footer-links {
+        font-size: 0.82rem;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .law-hero {
+        padding-top: 4.5rem;
+      }
+
+      .serve-card-inner {
+        padding: 1.5rem;
+        min-height: 170px;
+      }
+
+      .contact-list li {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html">YR&amp;P</a>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="services.html">Law Services</a>
+          <a href="#">Compliance</a>
+          <a href="#">Our Team</a>
+          <a href="#">Foreign Lawyers</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="law-hero">
+        <div class="container">
+          <span class="section-kicker">Legal Services</span>
+
+          <h1 class="law-hero-title">Unlock Legal Certainty in Indonesia.</h1>
+
+          <p class="law-hero-subtitle">
+            Proceed with confidence in pursuit of your business goals, legal objectives, and compliance requirements.
+          </p>
+
+          <p class="law-hero-copy">
+            Foreign investors, companies, and individuals can proceed with confidence in pursuit of their business goals, legal objectives, and compliance requirements.
+          </p>
+
+          <p class="law-hero-copy">
+            Our team combines Indonesian legal expertise with international professional experience, helping clients bridge legal, cultural, and commercial differences when operating in Indonesia.
+          </p>
+
+          <div class="law-hero-actions">
+            <a class="btn" href="#contact">Contact YR&amp;P</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="who-we-serve">
+        <div class="container">
+          <h2 class="section-heading-lg">Who We Serve.</h2>
+
+          <div class="serve-grid">
+            <article class="serve-card">
+              <div class="serve-card-inner">
+                <h3>Foreign Investors</h3>
+                <p>Support for market entry, investment structuring, legal due diligence, commercial arrangements, and operating in Indonesia with greater clarity.</p>
+              </div>
+            </article>
+
+            <article class="serve-card">
+              <div class="serve-card-inner">
+                <h3>PMA &amp; PMDN</h3>
+                <p>Legal support for foreign and domestic companies requiring corporate, licensing, governance, and regulatory assistance.</p>
+              </div>
+            </article>
+
+            <article class="serve-card">
+              <div class="serve-card-inner">
+                <h3>Family Offices</h3>
+                <p>Advisory support for private capital, asset protection, investment planning, and Indonesian legal risk management.</p>
+              </div>
+            </article>
+
+            <article class="serve-card">
+              <div class="serve-card-inner">
+                <h3>Property Owners &amp; Developers</h3>
+                <p>Support for land, leasing, development projects, ownership structures, due diligence, and transaction risk.</p>
+              </div>
+            </article>
+
+            <article class="serve-card">
+              <div class="serve-card-inner">
+                <h3>Private Clients</h3>
+                <p>Clear legal advice for individuals dealing with Indonesian property, contracts, disputes, family, estate, and commercial matters.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="trust">
+        <div class="container">
+          <div class="trust-layout">
+            <div>
+              <span class="section-kicker">Professional Accountability</span>
+              <h2 class="section-heading-lg">Why Clients Engage Us.</h2>
+            </div>
+
+            <div class="trust-copy">
+              <p>Our team includes Indonesian advocates, legal academics, and internationally admitted legal professionals whose work is shaped by professional obligations, ethical standards, and institutional accountability.</p>
+
+              <p>When clients engage our firm, they are not relying solely on individual opinions. They are engaging professionals whose conduct, qualifications, and professional standing are subject to obligations and ethical standards by the institutions and professional bodies to which they belong.</p>
+
+              <p>Those obligations do not guarantee outcomes. They do, however, create a level of responsibility that distinguishes professional legal services from unregulated advisory work.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="expertise">
+        <div class="container">
+          <span class="section-kicker">Our Expertise</span>
+          <h2 class="section-heading-lg">Core legal infrastructure for Indonesian matters.</h2>
+
+          <div class="law-focus-list">
+            <article class="law-focus-item">
+              <h3>Land and Real Estate</h3>
+              <p>Property transactions, due diligence, leasing, development projects, and land-related legal advice.</p>
+            </article>
+
+            <article class="law-focus-item">
+              <h3>PMA Formation &amp; Licensing</h3>
+              <p>Foreign investment company establishment, OSS licensing, regulatory approvals, and ongoing compliance.</p>
+            </article>
+
+            <article class="law-focus-item">
+              <h3>Business Compliance, Remediation &amp; Rehabilitation</h3>
+              <p>Corporate governance, licensing remediation, restructuring, and regulatory compliance.</p>
+            </article>
+
+            <article class="law-focus-item">
+              <h3>Commercial Litigation</h3>
+              <p>Commercial disputes, debt recovery, contractual claims, and strategic dispute resolution.</p>
+            </article>
+
+            <article class="law-focus-item">
+              <h3>Negotiation Services</h3>
+              <p>Commercial negotiations, settlements, strategic communications, and dispute avoidance.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="section-block" id="contact">
+        <div class="container">
+          <div class="contact-layout">
+            <div>
+              <span class="section-kicker">Contact</span>
+              <h2 class="section-heading-lg">Start the conversation.</h2>
+              <p class="section-intro">
+                Tell us about your matter. We will arrange an initial discussion to understand your objectives and determine how we can assist.
+              </p>
+            </div>
+
+            <div class="contact-block">
+              <h3>How to Reach Us</h3>
+
+              <ul class="contact-list">
+                <li>
+                  <strong>Phone</strong>
+                  <span><a href="tel:+620000000000">+62 000 0000 0000</a></span>
+                </li>
+
+                <li>
+                  <strong>Email</strong>
+                  <span><a href="mailto:info@example.com">info@example.com</a></span>
+                </li>
+
+                <li>
+                  <strong>WhatsApp</strong>
+                  <span><a href="https://wa.me/620000000000">Message us directly</a></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="cta-strip">
+        <div class="container">
+          <div class="cta-minimal">
+            <div class="cta-grid">
+              <div>
+                <span class="section-kicker">Contact YR&amp;P</span>
+                <h2 class="section-heading-lg">What problem can we solve together?</h2>
+              </div>
+
+              <div>
+                <p class="cta-copy">
+                  Yafet Rissy &amp; Partners supports clients who need legal advice that is commercially useful, locally informed, and clearly communicated.
+                </p>
+
+                <a class="btn" href="#contact">Contact YR&amp;P</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <ul class="footer-links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Legal</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('is-open');
+
+      menuToggle.classList.toggle('is-active', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+  </script>
+</body>
+</html>
