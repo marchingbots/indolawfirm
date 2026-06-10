@@ -249,34 +249,68 @@
 
     .serve-grid {
       display: grid;
-      gap: 1.5rem;
+       grid-template-columns: 1fr;
+      gap: 0.9rem;
       margin-top: 2.5rem;
+      width: 100%;
     }
 
     .serve-card-inner {
-      height: 100%;
-      min-height: 190px;
-      padding: 2rem;
-      background: #000;
-      color: #fff;
-      border-radius: 1.5rem;
+        height: 100%;
+  min-height: 132px;
+  padding: 1.35rem;
+  background: #000;
+  color: #fff;
+  border-radius: 1.25rem;
+
+  display: flex;
+  align-items: flex-end;
     }
 
     .serve-card h3 {
-      margin: 0 0 0.85rem;
-      color: #fff;
-      font-size: clamp(1.3rem, 2vw, 1.55rem);
-      line-height: 1.15;
-      font-weight: 500;
-      letter-spacing: -0.025em;
+      margin: 0;
+  color: #fff;
+  font-size: clamp(1.15rem, 5vw, 1.45rem);
+  line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: -0.035em;
     }
 
-    .serve-card p {
-      margin: 0;
-      color: rgba(255,255,255,0.82);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
+    @media (min-width: 400px) {
+  .serve-card-inner {
+    min-height: 145px;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .serve-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .serve-card-inner {
+    min-height: 165px;
+  }
+}
+
+@media (min-width: 768px) {
+  .serve-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .serve-card-inner {
+    min-height: 220px;
+    padding: 1.6rem;
+    border-radius: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .serve-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 
     .trust-layout,
     .contact-layout {
@@ -533,21 +567,28 @@
       }
     }
 
-    @media (max-width: 575.98px) {
-      .law-hero {
-        padding-top: 4.5rem;
-      }
+   @media (max-width: 767.98px) {
+  .serve-grid {
+    max-width: 420px;
+    margin-top: 2.5rem;
+  }
 
-      .serve-card-inner {
-        padding: 1.5rem;
-        min-height: 170px;
-      }
+  .serve-card-inner {
+    padding: 1.5rem;
+    min-height: 145px;
+  }
+}
 
-      .contact-list li {
-        grid-template-columns: 1fr;
-        gap: 0.35rem;
-      }
-    }
+@media (max-width: 575.98px) {
+  .law-hero {
+    padding-top: 4.5rem;
+  }
+
+  .contact-list li {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
   </style>
 </head>
 
@@ -579,16 +620,14 @@
           <h1 class="law-hero-title">Unlock Legal Certainty in Indonesia.</h1>
 
           <p class="law-hero-subtitle">
-            Proceed with confidence in pursuit of your business goals, legal objectives, and compliance requirements.
+            Legal support for decisions that matter. 
           </p>
 
           <p class="law-hero-copy">
-            Foreign investors, companies, and individuals can proceed with confidence in pursuit of their business goals, legal objectives, and compliance requirements.
+            Empowering our clients' commercial and legal goals is why we exist. Our team combines Indonesian legal expertise with international professional experience, helping clients bridge legal, cultural, and commercial differences when operating in Indonesia.
           </p>
 
-          <p class="law-hero-copy">
-            Our team combines Indonesian legal expertise with international professional experience, helping clients bridge legal, cultural, and commercial differences when operating in Indonesia.
-          </p>
+          <
 
           <div class="law-hero-actions">
             <a class="btn" href="#contact">Contact YR&amp;P</a>
@@ -604,35 +643,30 @@
             <article class="serve-card">
               <div class="serve-card-inner">
                 <h3>Foreign Investors</h3>
-                <p>Support for market entry, investment structuring, legal due diligence, commercial arrangements, and operating in Indonesia with greater clarity.</p>
               </div>
             </article>
 
             <article class="serve-card">
               <div class="serve-card-inner">
                 <h3>PMA &amp; PMDN</h3>
-                <p>Legal support for foreign and domestic companies requiring corporate, licensing, governance, and regulatory assistance.</p>
               </div>
             </article>
 
             <article class="serve-card">
               <div class="serve-card-inner">
                 <h3>Family Offices</h3>
-                <p>Advisory support for private capital, asset protection, investment planning, and Indonesian legal risk management.</p>
               </div>
             </article>
 
             <article class="serve-card">
               <div class="serve-card-inner">
                 <h3>Property Owners &amp; Developers</h3>
-                <p>Support for land, leasing, development projects, ownership structures, due diligence, and transaction risk.</p>
               </div>
             </article>
 
             <article class="serve-card">
               <div class="serve-card-inner">
                 <h3>Private Clients</h3>
-                <p>Clear legal advice for individuals dealing with Indonesian property, contracts, disputes, family, estate, and commercial matters.</p>
               </div>
             </article>
           </div>
@@ -648,11 +682,11 @@
             </div>
 
             <div class="trust-copy">
-              <p>Our team includes Indonesian advocates, legal academics, and internationally admitted legal professionals whose work is shaped by professional obligations, ethical standards, and institutional accountability.</p>
+              <p>Our team includes Indonesian advocates, legal academics, and internationally admitted legal professionals.</p>
 
-              <p>When clients engage our firm, they are not relying solely on individual opinions. They are engaging professionals whose conduct, qualifications, and professional standing are subject to obligations and ethical standards by the institutions and professional bodies to which they belong.</p>
+              <p>When clients engage our firm, they place their trust in professionals whose qualifications, conduct and professional standing are governed by established obligations and ethical standards of the institutions and professional bodies to which they belong.</p>
 
-              <p>Those obligations do not guarantee outcomes. They do, however, create a level of responsibility that distinguishes professional legal services from unregulated advisory work.</p>
+              <p>Those obligations do not guarantee outcomes. They do, however, create a level of responsibility and accountability our clients can rely on. </p>
             </div>
           </div>
         </div>
