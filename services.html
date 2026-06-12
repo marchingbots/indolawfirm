@@ -421,28 +421,50 @@
       text-decoration: underline;
     }
 
-    .cta-strip {
-      padding: clamp(4rem, 8vw, 6rem) 0;
-      background: #fff;
-    }
 
-    .cta-minimal {
-      padding-top: 2rem;
-      border-top: 1px solid var(--line);
-    }
+.cta-strip {
+  padding: clamp(4rem, 8vw, 6rem) 0;
+  background: #fff;
+}
 
-    .cta-grid {
-      display: grid;
-      gap: 2rem;
-      align-items: end;
-    }
+.cta-minimal {
+  position: relative;
+  padding-top: 2.25rem;
+}
 
-    .cta-copy {
-      margin: 0 0 1.25rem;
-      color: #222;
-      font-size: 1rem;
-      line-height: 1.8;
-    }
+.cta-minimal .section-kicker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.cta-grid {
+  display: grid;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.cta-grid > div {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.cta-copy {
+  max-width: 34rem;
+  margin: 0 0 1.75rem;
+  color: #222;
+  font-size: clamp(1rem, 1.1vw, 1.08rem);
+  line-height: 1.8;
+}
+
+.cta-grid .btn {
+  margin-top: 0.25rem;
+}
+
+
 
     .site-footer {
       margin-top: auto;
@@ -577,6 +599,7 @@
     padding: 1.5rem;
     min-height: 145px;
   }
+ 
 }
 
 @media (max-width: 575.98px) {
@@ -605,8 +628,8 @@
 
         <nav class="nav-links" aria-label="Main navigation">
           <a href="services.html">Law Services</a>
-          <a href="#">Compliance</a>
-          <a href="#">Our Team</a>
+          <a href="compliance.html">Compliance</a>
+          <a href="our-team.html">Our Team</a>
           <a href="#">Foreign Lawyers</a>
         </nav>
       </div>
@@ -617,17 +640,17 @@
         <div class="container">
           <span class="section-kicker">Legal Services</span>
 
-          <h1 class="law-hero-title">Unlock Legal Certainty in Indonesia.</h1>
+          <h1 class="law-hero-title"> Legal support for decisions that matter.</h1>
 
           <p class="law-hero-subtitle">
-            Legal support for decisions that matter. 
+            Unlock Legal Certainty in Indonesia. 
           </p>
 
           <p class="law-hero-copy">
             Empowering our clients' commercial and legal goals is why we exist. Our team combines Indonesian legal expertise with international professional experience, helping clients bridge legal, cultural, and commercial differences when operating in Indonesia.
           </p>
 
-          <
+          
 
           <div class="law-hero-actions">
             <a class="btn" href="#contact">Contact YR&amp;P</a>
@@ -695,7 +718,7 @@
       <section class="section-block" id="expertise">
         <div class="container">
           <span class="section-kicker">Our Expertise</span>
-          <h2 class="section-heading-lg">Core legal infrastructure for Indonesian matters.</h2>
+          <h2 class="section-heading-lg">How We Help.</h2>
 
           <div class="law-focus-list">
             <article class="law-focus-item">
@@ -787,7 +810,7 @@
       <div class="container">
         <ul class="footer-links">
           <li><a href="#">About</a></li>
-          <li><a href="#">Privacy</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
           <li><a href="#">Legal</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>

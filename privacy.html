@@ -1,0 +1,674 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Privacy Statement | Yafet Rissy & Partners Law Firm</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --text: #111111;
+      --muted: #5f625c;
+      --line: rgba(17, 17, 17, 0.08);
+      --max: 1160px;
+      --pad: 16px;
+    }
+
+    @media (min-width: 300px) { :root { --pad: 18px; } }
+    @media (min-width: 400px) { :root { --pad: 22px; } }
+    @media (min-width: 576px) { :root { --pad: 28px; } }
+    @media (min-width: 768px) { :root { --pad: 36px; } }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    body {
+      min-height: 100svh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .page {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      padding-inline: var(--pad);
+      margin-inline: auto;
+    }
+
+    header,
+    footer {
+      flex: 0 0 auto;
+    }
+
+    .site-header {
+      padding-block: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: -0.045em;
+      z-index: 2;
+    }
+
+    .menu-toggle {
+      width: 38px;
+      height: 28px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 7px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--text);
+      transition: transform 180ms ease;
+    }
+
+    .menu-toggle.is-active span:first-child {
+      transform: translateY(4.5px) rotate(45deg);
+    }
+
+    .menu-toggle.is-active span:last-child {
+      transform: translateY(-4.5px) rotate(-45deg);
+    }
+
+    .nav-links {
+      display: none;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: lowercase;
+    }
+
+    .nav-links.is-open {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 22px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      font-size: 18px;
+      z-index: 10;
+    }
+
+    main {
+      flex: 1 1 auto;
+    }
+
+    .privacy {
+      padding-block: clamp(48px, 8vw, 96px);
+    }
+
+    .privacy-header {
+      max-width: 860px;
+      margin-bottom: clamp(42px, 7vw, 80px);
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .privacy h1 {
+      margin: 0;
+      max-width: 960px;
+      font-size: clamp(48px, 10vw, 132px);
+      line-height: 0.92;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+    }
+
+    .privacy-intro {
+      margin: 32px 0 0;
+      max-width: 720px;
+      font-size: clamp(20px, 2vw, 30px);
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .privacy-content {
+      max-width: 820px;
+      padding-top: 36px;
+      border-top: 1px solid var(--line);
+    }
+
+    .notice {
+      margin-bottom: 44px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .notice h2 {
+      margin-top: 0;
+    }
+
+    .privacy-content section {
+      padding-block: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .privacy-content section:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .privacy h2 {
+      margin: 0 0 18px;
+      font-size: clamp(24px, 3vw, 40px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      font-weight: 850;
+    }
+
+    .privacy h3 {
+      margin: 28px 0 12px;
+      font-size: 16px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+    }
+
+    .privacy p,
+    .privacy li {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .privacy p {
+      margin: 0 0 16px;
+    }
+
+    .privacy ul {
+      margin: 0 0 8px;
+      padding-left: 1.2em;
+    }
+
+    .privacy li {
+      margin-bottom: 6px;
+    }
+
+    .site-footer {
+      padding-block: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: lowercase;
+    }
+
+    @media (min-width: 576px) {
+      .brand {
+        font-size: 24px;
+      }
+
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .brand {
+        font-size: 26px;
+      }
+
+      .footer-links {
+        gap: 22px;
+        font-size: 14px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .site-header {
+        padding-block: 26px;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        font-size: 14px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .container {
+        max-width: var(--max);
+      }
+
+      .brand {
+        font-size: 28px;
+      }
+
+      .nav-links,
+      .footer-links {
+        font-size: 15px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      :root {
+        --max: 1120px;
+      }
+
+      .site-header {
+        padding-block: 30px;
+      }
+
+      .brand {
+        font-size: 30px;
+      }
+    }
+
+    @media (min-width: 1400px) {
+      :root {
+        --max: 1240px;
+      }
+
+      .brand {
+        font-size: 32px;
+      }
+
+      .nav-links,
+      .footer-links {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html">YR&amp;P</a>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="services.html">law services</a>
+          <a href="compliance.html">compliance</a>
+          <a href="our-team.html">our team</a>
+          <a href="#">foreign lawyers</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="privacy">
+        <div class="container">
+          <div class="privacy-header">
+            <p class="eyebrow">privacy statement</p>
+            <h1>Privacy Statement</h1>
+            <p class="privacy-intro">
+              version 1.1 June 2026
+            </p>
+          </div>
+
+          <div class="privacy-content">
+            <div class="notice">
+              <h2>Website Confidentiality Notice</h2>
+              <p>
+                Information submitted through this website does not create a lawyer-client relationship, advocate-client relationship, retainer, or engagement with the Firm.
+              </p>
+              <p>
+                Prospective clients should not transmit confidential, privileged, commercially sensitive, or time-sensitive information through website forms, email enquiries, or other communications until the Firm has confirmed its engagement and completed any required conflict checks.
+              </p>
+              <p>
+                The Firm's receipt of information from a prospective client does not create any obligation to act for that person or organisation and does not prevent the Firm from acting for another client where permitted by applicable law and professional obligations.
+              </p>
+            </div>
+
+            <section>
+              <h2>1. Our Commitment to Privacy and Confidentiality</h2>
+              <p>
+                We recognise that individuals and organisations who engage legal services often provide highly sensitive personal, financial, commercial, corporate, regulatory, and legal information.
+              </p>
+              <p>
+                The Firm is committed to protecting that information through appropriate legal, organisational, administrative, and technical safeguards.
+              </p>
+              <p>
+                Our lawyers and legal professionals are subject to professional duties of confidentiality and professional secrecy under Indonesian law, including Law No. 18 of 2003 concerning Advocates and the Indonesian Advocate Code of Ethics.
+              </p>
+              <p>
+                Nothing in this Privacy Statement is intended to limit any broader confidentiality obligations that may apply under applicable law, professional rules, or contractual arrangements.
+              </p>
+            </section>
+
+            <section>
+              <h2>2. Information We Collect</h2>
+
+              <h3>Personal Information</h3>
+              <ul>
+                <li>Name</li>
+                <li>Date of birth</li>
+                <li>Nationality</li>
+                <li>Residential address</li>
+                <li>Email address</li>
+                <li>Telephone number</li>
+                <li>Passport information</li>
+                <li>Immigration and visa information</li>
+                <li>Tax identification numbers</li>
+                <li>Identity documents</li>
+                <li>Employment information</li>
+              </ul>
+
+              <h3>Corporate Information</h3>
+              <ul>
+                <li>Company ownership information</li>
+                <li>Corporate structure information</li>
+                <li>Licensing and regulatory information</li>
+                <li>Shareholding information</li>
+                <li>Financial and accounting records</li>
+                <li>Business transaction information</li>
+              </ul>
+
+              <h3>Legal Matter Information</h3>
+              <ul>
+                <li>Instructions provided to the Firm</li>
+                <li>Correspondence</li>
+                <li>Contracts and legal documents</li>
+                <li>Litigation materials</li>
+                <li>Due diligence materials</li>
+                <li>Evidence and supporting documents</li>
+                <li>Information relevant to legal advice or representation</li>
+              </ul>
+
+              <h3>Technical Information</h3>
+              <ul>
+                <li>IP address</li>
+                <li>Browser type</li>
+                <li>Device information</li>
+                <li>Website usage information</li>
+                <li>Cookies and analytics information</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>3. How We Use Information</h2>
+              <ul>
+                <li>Provide legal advice and legal services</li>
+                <li>Assess potential engagements</li>
+                <li>Conduct conflict checks</li>
+                <li>Verify identity and comply with legal obligations</li>
+                <li>Prepare legal documents</li>
+                <li>Communicate with clients and prospective clients</li>
+                <li>Manage client relationships</li>
+                <li>Administer billing and payments</li>
+                <li>Comply with professional, legal, regulatory, and court requirements</li>
+                <li>Improve our website and services</li>
+                <li>Protect our legal rights and interests</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>4. Confidential Legal Information</h2>
+              <p>
+                Information provided to the Firm in connection with legal advice or legal representation may be protected by professional confidentiality obligations and other legal protections.
+              </p>
+              <p>
+                The Firm maintains procedures designed to safeguard confidential information and restrict access to those personnel who require access for legitimate professional purposes.
+              </p>
+              <p>
+                Confidential information may continue to be protected after the conclusion of a matter or termination of the lawyer-client relationship.
+              </p>
+            </section>
+
+            <section>
+              <h2>5. Legal Basis for Processing</h2>
+              <ul>
+                <li>It is necessary to provide legal services requested by a client;</li>
+                <li>It is necessary to comply with legal or regulatory obligations;</li>
+                <li>It is necessary to protect legitimate interests of the Firm or our clients;</li>
+                <li>Consent has been provided where required by law; or</li>
+                <li>Processing is otherwise permitted under applicable Indonesian law.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>6. Disclosure of Information</h2>
+              <p>We do not sell personal information.</p>
+              <ul>
+                <li>Courts and tribunals;</li>
+                <li>Government authorities;</li>
+                <li>Regulatory bodies;</li>
+                <li>Professional advisers;</li>
+                <li>Expert witnesses;</li>
+                <li>Translators and consultants;</li>
+                <li>Service providers assisting the Firm;</li>
+                <li>Financial institutions;</li>
+                <li>Insurance providers;</li>
+                <li>Other parties authorised by the client.</li>
+              </ul>
+              <p>
+                Information may also be disclosed where required by law, court order, or lawful government request.
+              </p>
+            </section>
+
+            <section>
+              <h2>7. International Transfers</h2>
+              <p>
+                Because many of our clients are foreign investors, multinational businesses, expatriates, and international individuals, information may be transferred, accessed, or processed outside Indonesia where reasonably necessary for legal services, administration, or professional support.
+              </p>
+              <p>
+                Where cross-border transfers occur, the Firm will take reasonable steps to ensure that personal information receives an appropriate level of protection consistent with applicable law.
+              </p>
+            </section>
+
+            <section>
+              <h2>8. Data Security</h2>
+              <ul>
+                <li>Unauthorised access;</li>
+                <li>Unauthorised disclosure;</li>
+                <li>Misuse;</li>
+                <li>Alteration;</li>
+                <li>Loss; and</li>
+                <li>Destruction.</li>
+              </ul>
+              <p>
+                No method of electronic transmission or storage can be guaranteed to be completely secure. Accordingly, while we take reasonable measures to protect information, absolute security cannot be guaranteed.
+              </p>
+            </section>
+
+            <section>
+              <h2>9. Retention of Information</h2>
+              <ul>
+                <li>Provide legal services;</li>
+                <li>Maintain client records;</li>
+                <li>Comply with professional obligations;</li>
+                <li>Meet regulatory requirements;</li>
+                <li>Resolve disputes;</li>
+                <li>Enforce legal rights; and</li>
+                <li>Comply with applicable law.</li>
+              </ul>
+              <p>
+                Retention periods may vary depending on the nature of the engagement and legal requirements applicable to the matter.
+              </p>
+            </section>
+
+            <section>
+              <h2>10. Your Rights</h2>
+              <ul>
+                <li>Request access to information;</li>
+                <li>Request correction of inaccurate information;</li>
+                <li>Request deletion where legally permissible;</li>
+                <li>Withdraw consent where consent forms the basis of processing;</li>
+                <li>Request information regarding how personal data is processed.</li>
+              </ul>
+              <p>
+                Certain rights may be limited where legal professional obligations, litigation requirements, legal privilege, regulatory obligations, or applicable law require information to be retained or protected.
+              </p>
+            </section>
+
+            <section>
+              <h2>11. Cookies and Website Analytics</h2>
+              <p>
+                Our website may use cookies and similar technologies to improve functionality, security, and user experience.
+              </p>
+              <p>
+                Users may manage cookie preferences through their browser settings, although disabling cookies may affect website functionality.
+              </p>
+            </section>
+
+            <section>
+              <h2>12. Third-Party Websites</h2>
+              <p>
+                Our website may contain links to third-party websites.
+              </p>
+              <p>
+                The Firm is not responsible for the privacy practices, content, or security of external websites and encourages users to review the privacy policies of those websites separately.
+              </p>
+            </section>
+
+            <section>
+              <h2>13. Changes to this Privacy Statement</h2>
+              <p>
+                We may update this Privacy Statement from time to time.
+              </p>
+              <p>
+                The most current version will be published on our website together with the effective date.
+              </p>
+            </section>
+
+            <section>
+              <h2>14. Contact Us</h2>
+              <p>Yafet Rissy &amp; Partners Law Firm</p>
+              <p>
+                For questions regarding this Privacy Statement, personal information, confidentiality obligations, or data protection matters, please contact:
+              </p>
+              <p>
+                Email: [Insert Email Address]<br>
+                Telephone: [Insert Telephone Number]<br>
+                Address: [Insert Office Address]
+              </p>
+            </section>
+
+            <section>
+              <h2>Governing Framework</h2>
+              <ul>
+                <li>Law No. 18 of 2003 concerning Advocates;</li>
+                <li>Indonesian Advocate Code of Ethics;</li>
+                <li>Law No. 27 of 2022 concerning Personal Data Protection;</li>
+                <li>Electronic Information and Transactions Law and related regulations; and</li>
+                <li>Other applicable Indonesian laws and regulations.</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-note">Indonesian legal services.</div>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="privacy.html">privacy</a>
+          <a href="#">legal</a>
+          <a href="#">contact</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('is-open');
+
+      menuToggle.classList.toggle('is-active', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,648 @@
+<!-- our-team.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Our Team | Yafet Rissy & Partners Law Firm</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --header-bg: #f7f4ee;
+      --text: #111111;
+      --muted: #5f625c;
+      --line: rgba(17, 17, 17, 0.08);
+      --black: #070707;
+      --soft: #f6f4ef;
+      --max: 1160px;
+      --pad: 16px;
+      --radius-lg: 32px;
+      --radius-md: 22px;
+    }
+
+    @media (min-width: 300px) { :root { --pad: 18px; } }
+    @media (min-width: 400px) { :root { --pad: 22px; } }
+    @media (min-width: 576px) { :root { --pad: 28px; } }
+    @media (min-width: 768px) { :root { --pad: 36px; } }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    body {
+      min-height: 100svh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      padding-inline: var(--pad);
+      margin-inline: auto;
+    }
+
+    header,
+    footer {
+      flex: 0 0 auto;
+    }
+
+    .site-header {
+      padding-block: 18px;
+      border-bottom: 1px solid var(--line);
+      background: var(--header-bg);
+    }
+
+    .nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: -0.045em;
+      z-index: 2;
+    }
+
+    .menu-toggle {
+      width: 38px;
+      height: 28px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 7px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--text);
+      transition: transform 180ms ease;
+    }
+
+    .menu-toggle.is-active span:first-child {
+      transform: translateY(4.5px) rotate(45deg);
+    }
+
+    .menu-toggle.is-active span:last-child {
+      transform: translateY(-4.5px) rotate(-45deg);
+    }
+
+    .nav-links {
+      display: none;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: lowercase;
+    }
+
+    .nav-links.is-open {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 22px;
+      background: var(--header-bg);
+      border: 1px solid var(--line);
+      font-size: 18px;
+      z-index: 10;
+    }
+
+    main {
+      flex: 1 1 auto;
+    }
+
+    .team-hero {
+      padding-block: clamp(32px, 7vw, 72px);
+    }
+
+    .hero-card {
+      overflow: hidden;
+      display: grid;
+      background: var(--black);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+    }
+
+    .hero-image {
+      min-height: 340px;
+      background: #111;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-copy {
+      padding: clamp(28px, 7vw, 72px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #bdbdbd;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      max-width: 720px;
+      font-size: 48px;
+      line-height: 0.92;
+      letter-spacing: -0.048em;
+      font-weight: 900;
+    }
+
+    .hero-copy p {
+      margin: 24px 0 0;
+      max-width: 560px;
+      font-size: clamp(17px, 4.2vw, 22px);
+      line-height: 1.42;
+      letter-spacing: -0.018em;
+      color: #d9d9d9;
+    }
+
+    .principal-contact {
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      display: grid;
+      gap: 9px;
+      font-size: 14px;
+      line-height: 1.35;
+      color: #eeeeee;
+    }
+
+    .principal-contact strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .team-section {
+      padding: 8px 0 76px;
+    }
+
+    .section-heading {
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 44px;
+      line-height: 0.96;
+      letter-spacing: -0.048em;
+      font-weight: 900;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .team-card {
+      min-height: 190px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .team-card h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.02;
+      letter-spacing: -0.042em;
+      font-weight: 850;
+    }
+
+    .credentials {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
+    .contact-list {
+      margin-top: 28px;
+      display: grid;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .contact-list span {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.095em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .site-footer {
+      padding-block: 18px;
+      border-top: 1px solid var(--line);
+      background: var(--header-bg);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: lowercase;
+    }
+
+    @media (min-width: 576px) {
+      .brand {
+        font-size: 24px;
+      }
+
+      .hero-copy h1 {
+        font-size: 64px;
+      }
+
+      .section-heading h2 {
+        font-size: 58px;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .team-card {
+        min-height: 220px;
+      }
+
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .brand {
+        font-size: 26px;
+      }
+
+      .hero-card {
+        grid-template-columns: 0.92fr 1.08fr;
+        min-height: 560px;
+      }
+
+      .hero-image {
+        min-height: auto;
+      }
+
+      .hero-copy h1 {
+        font-size: 84px;
+      }
+
+      .section-heading h2 {
+        font-size: 72px;
+      }
+
+      .footer-links {
+        gap: 22px;
+        font-size: 14px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .site-header {
+        padding-block: 26px;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        font-size: 14px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .container {
+        max-width: var(--max);
+      }
+
+      .brand {
+        font-size: 28px;
+      }
+
+      .nav-links,
+      .footer-links {
+        font-size: 15px;
+      }
+
+      .hero-card {
+        min-height: 620px;
+      }
+
+      .hero-copy h1 {
+        font-size: 96px;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .team-card {
+        min-height: 245px;
+        padding: 26px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      :root {
+        --max: 1120px;
+      }
+
+      .site-header {
+        padding-block: 30px;
+      }
+
+      .brand {
+        font-size: 30px;
+      }
+
+      .hero-card {
+        min-height: 660px;
+      }
+
+      .hero-copy h1 {
+        font-size: 108px;
+      }
+    }
+
+    @media (min-width: 1400px) {
+      :root {
+        --max: 1240px;
+      }
+
+      .brand {
+        font-size: 32px;
+      }
+
+      .nav-links,
+      .footer-links {
+        font-size: 16px;
+      }
+
+      .hero-card {
+        min-height: 700px;
+      }
+
+      .hero-copy h1 {
+        font-size: 118px;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html">YR&amp;P</a>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="services.html">law services</a>
+          <a href="compliance.html">compliance</a>
+          <a href="our-team.html">our team</a>
+          <a href="#">foreign lawyers</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="team-hero">
+        <div class="container">
+          <div class="hero-card">
+            <div class="hero-image">
+              <img
+                src="https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2slMjBndXklMjBkdW5raW5nJTIwYmFzZWtldGJhbGx8ZW58MHx8MHx8fDA%3D"
+                alt="Portrait of Prof. Yafet Rissy"
+              />
+            </div>
+
+            <div class="hero-copy">
+              <p class="eyebrow">Our Principal</p>
+              <h1>Professor Yafet Rissy</h1>
+              <p>
+                S.H, M.H, M.Si, LLM, Ph.D(AFHEA)
+              </p>
+
+              <div class="principal-contact">
+                <div><strong>Email:</strong> <a href="mailto:yafetrissy@gmail.com">yafetrissy@gmail.com</a></div>
+                <div><strong>WhatsApp:</strong> <a href="tel:+6281392102116">+62 813-9210-2116</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="team-section">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Legal Team</h2>
+          </div>
+
+          <div class="team-grid">
+            <article class="team-card">
+              <div>
+                <h3>Boyed Ratuwalu</h3>
+                <div class="credentials">S.H, M.H</div>
+              </div>
+              <div class="contact-list">
+                <div><span>Phone</span><a href="tel:+6282114810904">+62 821 1481 0904</a></div>
+                <div><span>Email</span>Email on request</div>
+              </div>
+            </article>
+
+            <article class="team-card">
+              <div>
+                <h3>Caesar Wauran</h3>
+                <div class="credentials">S.H, M.H</div>
+              </div>
+              <div class="contact-list">
+                <div><span>Phone</span><a href="tel:+6285793767676">+62 857 9376 7676</a></div>
+                <div><span>Email</span><a href="mailto:caesar.wauran@yahoo.com">caesar.wauran@yahoo.com</a></div>
+              </div>
+            </article>
+
+            <article class="team-card">
+              <div>
+                <h3>Danang Jakti</h3>
+                <div class="credentials">S.H, M.H</div>
+              </div>
+              <div class="contact-list">
+                <div><span>Phone</span><a href="tel:+6282225967626">+62 822 2596 7626</a></div>
+                <div><span>Email</span>Email on request</div>
+              </div>
+            </article>
+
+            <article class="team-card">
+              <div>
+                <h3>Bram Perwita</h3>
+                <div class="credentials">S.H, M.H</div>
+              </div>
+              <div class="contact-list">
+                <div><span>Phone</span><a href="tel:+6282137558077">+62 821 3755 8077</a></div>
+                <div><span>Email</span>Email on request</div>
+              </div>
+            </article>
+
+            <article class="team-card">
+              <div>
+                <h3>Mardian Putra Frans</h3>
+                <div class="credentials">S.H, M.H</div>
+              </div>
+              <div class="contact-list">
+                <div><span>Phone</span><a href="tel:+6281246166354">+62 812 4616 6354</a></div>
+                <div><span>Email</span>Email on request</div>
+              </div>
+            </article>
+
+            <article class="team-card">
+              <div>
+                <h3>Robert Grace</h3>
+                <div class="credentials">B.A, LLB</div>
+              </div>
+              <div class="contact-list">
+                <div><span>Phone</span><a href="tel:+6282266691197">822 666 91197</a></div>
+                <div><span>Email</span><a href="mailto:cvrobg@gmail.com">cvrobg@gmail.com</a></div>
+              </div>
+            </article>
+
+            <article class="team-card">
+              <div>
+                <h3>Aryanto Fait</h3>
+                <div class="credentials">S.H, M.H</div>
+              </div>
+              <div class="contact-list">
+                <div><span>Phone</span><a href="tel:+6285253473142">+62 852 5347 3142</a></div>
+                <div><span>Email</span>Email on request</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-note">Indonesian legal services.</div>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="privacy.html">privacy</a>
+          <a href="#">legal</a>
+          <a href="#">contact</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('is-open');
+
+      menuToggle.classList.toggle('is-active', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+  </script>
+</body>
+</html>
